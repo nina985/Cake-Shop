@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<!--fx:controller="main.CakeShopGUIController" -->
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+            prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+    <VBox layoutX="14.0" layoutY="14.0" prefHeight="377.0" prefWidth="576.0">
+        <HBox prefHeight="287.0" prefWidth="576.0">
+            <VBox prefHeight="277.0" prefWidth="371.0">
+                <GridPane prefHeight="192.0" prefWidth="318.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="187.2" minWidth="10.0"
+                                           prefWidth="78.4"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="238.40001220703127" minWidth="10.0"
+                                           prefWidth="223.20000000000002"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="137.4" minHeight="10.0" prefHeight="46.6"
+                                        vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="137.4" minHeight="10.0" prefHeight="55.4"
+                                        vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="137.4" minHeight="10.0" prefHeight="50.2000244140625"
+                                        vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="160.7999816894531" minHeight="10.0"
+                                        prefHeight="54.999975585937506" vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="130.60000610351562" minHeight="10.0"
+                                        prefHeight="48.399981689453114" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <TextField fx:id="CakeTypeTextField" GridPane.columnIndex="1"
+                               GridPane.rowIndex="1"/>
+                    <TextField fx:id="CakePriceTextField" GridPane.columnIndex="1"
+                               GridPane.rowIndex="2"/>
+                    <TextField fx:id="ClientNameTextField" GridPane.columnIndex="1"
+                               GridPane.rowIndex="3"/>
+                    <Label text="Cake Price:" GridPane.rowIndex="2"/>
+                    <TextField fx:id="OrderIDTextField" GridPane.columnIndex="1"/>
+                    <Label text="Order ID:"/>
+                    <Label text="Cake Type:" GridPane.rowIndex="1"/>
+                    <Label text="Client Name:" GridPane.rowIndex="3"/>
+                    <Label prefHeight="18.0" prefWidth="103.0" text="Status:" GridPane.rowIndex="4"/>
+                    <HBox alignment="CENTER" prefHeight="19.0" prefWidth="223.0"
+                          GridPane.columnIndex="1" GridPane.rowIndex="4">
+                        <children>
+                            <CheckBox fx:id="FinishedCheckBox" mnemonicParsing="false" prefHeight="18.0"
+                                      prefWidth="88.0" text="Finished"/>
+                        </children>
+                    </HBox>
+                </GridPane>
+                <GridPane prefHeight="70.0" prefWidth="318.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="40.19998779296875" minHeight="10.0"
+                                        prefHeight="40.19998779296875" vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="55.4" minHeight="10.0" prefHeight="46.60001220703125"
+                                        vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <Button fx:id="AddOrderButton" mnemonicParsing="false" prefHeight="26.0"
+                            prefWidth="142.0" text="Add Order"/>
+                    <Button fx:id="CancelOrderButton" mnemonicParsing="false" prefHeight="26.0"
+                            prefWidth="154.0" text="Cancel Order" GridPane.columnIndex="1"/>
+                    <Button fx:id="ModifyStatusButton" mnemonicParsing="false" prefHeight="26.0"
+                            prefWidth="140.0" text="Change Order Status" GridPane.rowIndex="1"/>
+                    <Button fx:id="ModifyCakeButton" mnemonicParsing="false" prefHeight="26.0"
+                            prefWidth="154.0" text="Change Order Cake" GridPane.columnIndex="1"
+                            GridPane.rowIndex="1"/>
+                </GridPane>
+            </VBox>
+            <VBox prefHeight="277.0" prefWidth="344.0">
+                <children>
+                    <Label text="Orders List"/>
+                    <ListView fx:id="orderListView" prefHeight="246.0" prefWidth="263.0"/>
+                </children>
+            </VBox>
+        </HBox>
+        <GridPane prefHeight="110.0" prefWidth="576.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="296.0" minWidth="10.0"
+                                   prefWidth="294.39996337890625"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="287.20001220703125" minWidth="10.0"
+                                   prefWidth="281.60003662109375"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <Button fx:id="ListCakesButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="273.0"
+                    text="List All Cakes" GridPane.columnIndex="1"/>
+            <Button fx:id="FinishedOrdersButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="273.0"
+                    text="List Finished Orders" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            <Button fx:id="UninishedOrdersButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="273.0"
+                    text="List Unfinished Orders" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+            <Button fx:id="CustomerOrdersButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="273.0"
+                    text="List Customer's Orders"/>
+            <Button fx:id="SamePriceButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="273.0"
+                    text="All Cakes Same Price" GridPane.rowIndex="2"/>
+            <Button fx:id="SameCakeTypeButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="273.0"
+                    text="All Orders With the Same Cake Type" GridPane.rowIndex="1"/>
+        </GridPane>
+    </VBox>
+</AnchorPane>
